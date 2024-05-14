@@ -1,0 +1,56 @@
+<thead class="border-b text-lg">
+    <tr>
+        <th class="border">{{ cities.location.name }}</th>
+    </tr>
+</thead>    
+<tbody class="text-center text-sm" id="tbody">
+    
+    <tr class="border">
+        <td>Name : {{ cities.location.name }}</td>
+    </tr>
+    <tr class="border">
+        <td>Region :  {{ cities.location.region }}</td>
+    </tr>
+    <tr class="border">
+        <td>Country : {{ cities.location.country }}</td>
+    </tr>
+    <tr class="border">
+        <td>Temp : {{ cities.current.temp_c }} Celcius</td>
+    </tr>
+    <tr class="border">
+        <td>Condition : {{ cities.current.condition.text }}</td>
+    </tr>
+    <tr class="border">
+        <td>Wind Speed : {{ cities.current.wind_kph }} Kmph</td>
+    </tr>
+    <tr class="border">
+        <td>Wind : {{ cities.current.wind_degree }} Degrees</td>
+    </tr>
+    <tr class="border">
+        <td>Wind Direction : {{ cities.current.wind_dir }}</td>
+    </tr>
+    <tr class="border">
+        <td>Pressure : {{ cities.current.pressure_in }} Inches</td>
+    </tr>
+    <tr class="border">
+        <td>Precipitation : {{ cities.current.precip_mm }} mm</td>
+    </tr>
+    <tr class="border">
+        <td>Humidity : {{ cities.current.temp_c }} %</td>
+    </tr>
+    <tr class="border">
+        <td>Clouds : {{ cities.current.cloud }} </td>
+    </tr>
+    <tr class="border">
+        <td>Feels Like : {{ cities.current.feelslike_c }} Celcius</td>
+    </tr>
+    <tr class="border">
+        <td>Visibility : {{ cities.current.vis_km }} Km</td>
+    </tr>
+    <tr class="border">
+        <td>UV : {{ cities.current.uv }} </td>
+    </tr>
+    <tr class="border">
+        <td>Gust : {{ cities.current.gust_kph }} Kmph</td>
+    </tr>
+</tbody>

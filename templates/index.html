@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12" ></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/path-params.js"></script>
+    <script src="/static/index.js"></script>
+
+</head>
+<body>
+    <div>
+        <a>Weather API</a>
+    </div>
+
+    <div hx-ext="path-params" hx-get="/location/location_like/{city}" hx-vals='js:{city: calculateValue()}'  hx-trigger="input changed delay:500ms, search" hx-target="#tid" hx-swap="beforeend">
+        <input id="search" placeholder="Search Your City"  type="search" />
+        <table class="min-w-[50%] mb-4">
+
+            <thead class="border-b text-lg">
+                <tr>
+                    <th class="border">City</th>
+                    <th class="border">State</th>
+                    <th class="border">Country</th>
+                    <th class="border">Link</th>
+                </tr>
+            </thead>    
+
+            <tbody class="text-center text-sm" id="tid">
+                
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

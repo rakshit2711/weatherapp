@@ -1,0 +1,12 @@
+{% for city in cities %}
+    <tr>
+        <td class="border">{{ city.city }}</td>
+        <td class="border">{{ city.state }}</td>
+        <td class="border">{{ city.country }}</td>
+        <td class="border">
+            <form action='/weather/{{city.city}}' method='get'>
+                <button type='submit'>Get Weather Report</button>
+            </form>
+        </td>
+    </tr>
+{% endfor %}
