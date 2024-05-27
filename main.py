@@ -18,12 +18,12 @@ app.include_router(location_controller.location_router)
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/")
+@app.get("/health")
 def read_root():
     return Response("Server is running")
 
 
-@app.get("/index",response_class=HTMLResponse)
+@app.get("/",response_class=HTMLResponse)
 def index(request: Request):
     context = {"request": request}
     return templates.TemplateResponse("index.html", context=context)
@@ -36,3 +36,10 @@ def weather(request: Request,city:str):
     context = {"request": request,"cities" : cities}
 
     return templates.TemplateResponse("weather.html", context=context)
+
+
+
+@app.get("/about",response_class=HTMLResponse)
+def weather(request: Request):
+    context = {"request": request}
+    return templates.TemplateResponse("about.html", context=context)

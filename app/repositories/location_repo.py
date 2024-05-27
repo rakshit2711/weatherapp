@@ -10,6 +10,7 @@ def get_cities_by_country(country:str):
     res = db.query(City).join(State).join(Country).filter(base_condition).all();
     res = convert_to_city_state_country(res);
     res = json.dumps(res)
+    db.close_all()
     return res
 
 def get_cities_by_state(country: str, state: str):
@@ -19,6 +20,7 @@ def get_cities_by_state(country: str, state: str):
     res = db.query(City).join(State).join(Country).filter(base_condition).all();
     res = convert_to_city_state_country(res);
     res = json.dumps(res)
+    db.close_all()
     return res
 
 
@@ -29,12 +31,14 @@ def get_city(country: str, city: str):
     res = db.query(City).join(State).join(Country).filter(base_condition).all();
     res = convert_to_city_state_country(res);
     res = json.dumps(res)
+    db.close_all()
     return res
 
 def get_location_like(loc_name: str):
     db = get_db()
     res = db.query(City).join(State).join(Country).filter(func.lower(City.city_name).like(f"%{loc_name.lower()}%")).all();
     res = convert_to_city_state_country(res)
+    db.close_all()
     return res
 
 def convert_to_city_state_country(res):

@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import  sessionmaker
-DATABASE_URL = "postgresql://rakshit:rak@127.0.0.2:5432/weather"
+DATABASE_URL = "postgresql://weather_owner:Xig2jZdD0ehw@ep-holy-wave-a1k2vm0b.ap-southeast-1.aws.neon.tech/weather?sslmode=require"
 db = None
 def get_db():
     global db

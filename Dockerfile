@@ -15,4 +15,4 @@ RUN pip install  -r /code/requirements.txt
 COPY ./app /code/app
 
 # 
-# CMD ["fastapi", "run", "/code/main.py", "--port", "8000"]
+CMD ["fastapi", "run", "/code/main.py", "--port", "8000"]
